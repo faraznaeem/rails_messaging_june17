@@ -3,7 +3,18 @@ When(/^I visit "([^"]*)" page$/) do |page|
 end
 
 Then(/^I should be on "([^"]*)" page$/) do |page_name|
-  expect(page).to have_current_path("/users/sign_up")
+
+  case page_name
+    when "Sign up"
+      path = "/users/sign_up"
+    when "Log in"
+      path = "/users/sign_in"
+    else
+      puts "Path missing!"
+  end
+
+  expect(page).to have_current_path(path)
+
 end
 
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
