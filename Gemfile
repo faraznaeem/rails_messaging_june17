@@ -21,11 +21,12 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
+  gem 'coveralls', require: false
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :production do
