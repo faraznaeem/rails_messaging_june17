@@ -264,6 +264,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  capybara
   chosen-rails
   coveralls
   cucumber-rails

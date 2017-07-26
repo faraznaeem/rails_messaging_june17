@@ -7,20 +7,25 @@ end
 Given(/^I am logged in as "([^"]*)"$/) do |name|
   user = User.find_by(name: name)
   login_as(user, scope: :user)
+  visit '/'
 end
 
 Given(/^I click on the "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  click_link(arg1)
 end
 
-Given(/^I click on the "([^"]*)" button$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I click on the "([^"]*)" button$/) do |button_name|
+  click_link_or_button button_name
 end
 
-When(/^I enter information in "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I select "([^"]*)" from the recipient list$/) do |recipient|
+  select recipient, from: "Recipient"
 end
 
-Then(/^I should see "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I enter "([^"]*)" in "([^"]*)"$/) do |content, input|
+  fill_in input, with: content
+end
+
+Then(/^I should see "([^"]*)"$/) do |content|
+  expect(page).to have_content content
 end
