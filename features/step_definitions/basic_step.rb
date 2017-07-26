@@ -17,7 +17,7 @@ Then(/^I should be on "([^"]*)" page$/) do |page_name|
     when 'Sign up'
       path = new_user_registration_path
     when 'Log in'
-      path = '/users/sign_in'
+      path = new_user_session_path
     else
       raise 'Path missing!'
   end
