@@ -7,7 +7,7 @@ Then(/^I should be on "([^"]*)" page$/) do |page_name|
 end
 
 When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
-  fill_in(field, :with => value)
+  fill_in(field, with: value)
 end
 
 When(/^I click "([^"]*)" button$/) do |button|
