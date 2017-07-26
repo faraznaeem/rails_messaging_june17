@@ -1,9 +1,17 @@
 language: ruby
+notifications:
+  email: false
 cache: bundler
 rvm:
   - 2.4.0
 before_script:
   - bundle exec rails db:create db:migrate
 script:
-  - bundle exec rspec
-  - bundle exec cucumber
+  - bundle exec rails tests
+deploy:
+  provider: heroku
+  api_key:
+    secure: 48thtiei86EbrMxoEEWDyS2e252Y4dEnp1ixfLK0Jk938ecHDMxLbE4mnxkq9p9GWTj6vxP8u/hIRdzZjlGyDiGWuJqoISCsnfbKOkkQN8W6bX1VPEiNFYQzBuiH1Qqz7og889OClAUuoKhBdBKszoC4HmAJchAIfWe9DVdvyA/VjlfbtLkWH18Rx5GWqci/ZAlUe4mYah6jSSf/hMXGX2jGrzjarjw2XJ8tLz6vGwx13wZ8hTwTA6O/+3Zk2FQKZtkcJMEu+N6f1hvpQ3SmiwcWur4ZbG+Zja5+7aUjmtTSJ0Hlq90eHZTnttqsYy2Lcwjc00hRxRL5+HBRpBDQsJyC6+2j68XhFW30mdCENJZ3rRnlREtWw4q+/sX6v163DU6eD2g/FLCmw3qs/2xZDWXNPsqvAxndCnl1D5Kgz8AtuMGdyQplG4Ju/daEWyxS6RZJxIFpoDSc+buxgS6DQLqkjJDKP4/f9FvYjNIqmeNCcuYxSO6IvzXu/RnWlQqCdaqXR2tf51nBjRWZVeBHz0vQgtwjLDYjJEE1vlFCJIOMpTEU6ARi/5GZyCGRRHA8/WN7UztvFCkuL3NewTcl/+FYt0L9RHvoj+02E398sLeig7PuBm3ctwWKroIcuttY0wbstWrNunqadMkeYx0LZkylFQVLx6yb4D3n4p+7RpM=
+  app:
+    master: rails-messaging-june-17
+  run: 'rails db:migrate'
