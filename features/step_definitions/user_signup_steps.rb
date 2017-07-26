@@ -1,9 +1,9 @@
-When(/^I visit "([^"]*)" page$/) do |landing_page|
+When(/^I visit "([^"]*)" page$/) do |page|
   visit root_path
 end
 
-When(/^I click "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I click "([^"]*)"$/) do |button|
+  click_link_or_button(button)
 end
 
 Then(/^I should be on "([^"]*)" page$/) do |arg1|
