@@ -8,8 +8,6 @@ class ConversationsController < ApplicationController
     recipients = User.where(id: conversation_params[:recipients])
     conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
 
-    #binding.pry
-
     if conversation.nil?
       flash[:alert] = "We're sorry, but something went wrong"
       redirect_to root_path
