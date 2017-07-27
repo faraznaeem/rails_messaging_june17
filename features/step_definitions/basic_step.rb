@@ -16,6 +16,10 @@ Given(/^I select "([^"]*)" from the recipient list$/) do |recipient|
   select recipient, from: "Recipient"
 end
 
+Given(/^I select "([^"]*)" from the "([^"]*)"$/) do |option, select_field|
+  select option, from: select_field
+end
+
 #Assertions steps
 Then(/^I should see "([^"]*)"$/) do |content|
   expect(page).to have_content content

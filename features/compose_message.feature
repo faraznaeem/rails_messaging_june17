@@ -15,7 +15,7 @@ Feature: Compose messages
     Given I visit "landing" page
     And I click "Inbox" button
     And I click "Compose" button
-    And I select "lisa" from the recipient list
+    And I select "lisa" from the "Recipient"
     And I fill in "Body" with "good"
     And I click "Send Message" button
     Then I should see "We're sorry, but something went wrong"
