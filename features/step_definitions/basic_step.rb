@@ -49,14 +49,14 @@ end
 def get_path(page_name)
 
   case page_name
-    when 'Sign up'
-      path = new_user_registration_path
-    when 'Log in'
-      path = new_user_session_path
-    when 'landing'
-      path = root_path
-    else
-      raise 'Path missing!'
+  when 'Sign up'
+    path = new_user_registration_path
+  when 'Log in'
+    path = new_user_session_path
+  when 'landing'
+    path = root_path
+  else
+    raise 'Path missing!'
   end
 
 end
