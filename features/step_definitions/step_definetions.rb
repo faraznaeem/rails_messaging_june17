@@ -14,7 +14,6 @@ Given(/^I click on the "([^"]*)" (?:link|button)$/) do |link_or_button_name|
   click_link_or_button link_or_button_name
 end
 
-
 Given(/^I select "([^"]*)" from the recipient list$/) do |recipient|
   select recipient, from: "Recipient"
 end
@@ -29,12 +28,4 @@ end
 
 Given(/^I am on landing page$/) do
   visit new_conversation_path
-end
-
-
-
-
-
-Given(/^show me the page$/) do
-  save_and_open_page
 end
