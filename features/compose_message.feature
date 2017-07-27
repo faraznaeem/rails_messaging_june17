@@ -12,7 +12,7 @@ Feature: Compose messages
     And I am logged in as "bob"
 
   Scenario: Composing a message
-    Given I click on the "Inbox"
+    Given I click on the "Inbox" button
     And I click on the "Compose" button
     And I select "lisa" from the recipient list
     When I enter "hello" in "Subject"
@@ -21,7 +21,7 @@ Feature: Compose messages
     Then I should see "Your message was successfully sent!"
 
   Scenario: User doesn't enter in required subject field
-    Given I click on the "Inbox"
+    Given I click on the "Inbox" button
     And I click on the "Compose" button
     And I select "lisa" from the recipient list
     And I enter "good" in "Body"

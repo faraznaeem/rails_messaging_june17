@@ -10,7 +10,7 @@ Given(/^I am logged in as "([^"]*)"$/) do |name|
   visit root_path
 end
 
-Given(/^I click on the "([^"]*)"(?:link|button)$/) do |link_or_button_name|
+Given(/^I click on the "([^"]*)" (?:link|button)$/) do |link_or_button_name|
   click_link_or_button link_or_button_name
 end
 
