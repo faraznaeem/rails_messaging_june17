@@ -1,6 +1,6 @@
 Feature: As a user
   In order to access the application
-  I need to register an accoun
+  I need to register an account
 
   Scenario: Register new user with invalid password and password confirmation not matching
     When I visit "landing" page
