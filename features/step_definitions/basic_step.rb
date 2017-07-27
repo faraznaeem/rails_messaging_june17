@@ -12,10 +12,6 @@ When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
   fill_in field, with: value
 end
 
-Given(/^I select "([^"]*)" from the recipient list$/) do |recipient|
-  select recipient, from: "Recipient"
-end
-
 Given(/^I select "([^"]*)" from the "([^"]*)"$/) do |option, select_field|
   select option, from: select_field
 end
