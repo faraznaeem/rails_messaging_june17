@@ -44,3 +44,4 @@ end
 Given(/^the user "([^"]*)" exist$/) do |name|
   FactoryGirl.create(:user, name: name)
 end
+
