@@ -2,12 +2,6 @@ Then(/^show me the page$/) do
   save_and_open_page
 end
 
-Given(/^the following user exist$/) do |table|
-  table.hashes.each do | user |
-    User.create(user)
-  end
-end
-
 When(/^I visit "([^"]*)" page$/) do |page|
   visit root_path
 end
