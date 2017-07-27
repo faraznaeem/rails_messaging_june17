@@ -8,7 +8,6 @@ Background:
 Scenario: User Login
   When I visit "landing" page
   And I click "Login" button
-  Then I should be on "Log in" page
   And I fill in "Email" with "bob@example.com"
   And I fill in "Password" with "abcde123"
   And I click "Log in" button
@@ -17,7 +16,6 @@ Scenario: User Login
 Scenario: User Login with invalid password
   When I visit "landing" page
   And I click "Login" button
-  Then I should be on "Log in" page
   And I fill in "Email" with "bob@bob.com"
   And I fill in "Password" with "bob1234S"
   And I click "Log in" button
