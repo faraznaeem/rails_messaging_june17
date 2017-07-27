@@ -10,8 +10,8 @@ Given(/^I am logged in as "([^"]*)"$/) do |name|
   visit '/'
 end
 
-Given(/^I click on the "([^"]*)"$/) do |arg1|
-  click_link(arg1)
+Given(/^I click on the "([^"]*)"$/) do |link|
+  click_link(link)
 end
 
 Given(/^I click on the "([^"]*)" button$/) do |button_name|
@@ -29,3 +29,4 @@ end
 Then(/^I should see "([^"]*)"$/) do |content|
   expect(page).to have_content content
 end
+
