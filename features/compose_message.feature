@@ -24,7 +24,7 @@ Feature: Compose messages
     Given I visit "landing" page
     And I click "Inbox" button
     And I click "Compose" button
-    And I select "lisa" from the recipient list
+    And I select "lisa" from the "Recipient"
     When I fill in "Subject" with "Hello"
     And I fill in "Body" with "good"
     And I click "Send Message" button
