@@ -3,29 +3,26 @@ Then(/^show me the page$/) do
 end
 
 When(/^I visit "([^"]*)" page$/) do |page_name|
-
-  case page_name
-  when 'landing'
-    path = root_path
-  else
-    raise 'Path missing!'
-  end
-
-  visit path
-
+  visit get_path page_name
 end
 
 Then(/^I should be on "([^"]*)" page$/) do |page_name|
+  expect(page).to have_current_path get_path page_name
+end
+
+
+def get_path(page_name)
+
   case page_name
   when 'Sign up'
     path = new_user_registration_path
   when 'Log in'
     path = new_user_session_path
+  when 'landing'
+    path = root_path
   else
     raise 'Path missing!'
   end
-
-  expect(page).to have_current_path path
 
 end
 
