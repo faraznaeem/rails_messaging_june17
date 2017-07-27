@@ -27,3 +27,14 @@ Then(/^I should see "([^"]*)"$/) do |content|
   expect(page).to have_content content
 end
 
+Given(/^I am on landing page$/) do
+  visit new_conversation_path
+end
+
+
+
+
+
+Given(/^show me the page$/) do
+  save_and_open_page
+end
