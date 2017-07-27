@@ -17,7 +17,6 @@ Feature: Compose messages
     And I click on the "Compose" button
     And I select "lisa" from the recipient list
     And I enter "good" in "Body"
-    And show me the page
     And I click on the "Send Message" button
     Then I should see "We're sorry, but something went wrong"
 
