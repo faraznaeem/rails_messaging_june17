@@ -4,7 +4,7 @@ Feature: Compose messages
   I should be able to compose a message
 
   Background:
-    Given the following user exist
+    Given the following users exist
       | name      | password          | email         |
       | bob       | bob12345          | bob@bob.com   |
       | lisa      | lisa12345         | lisa@lisa.com |
@@ -19,3 +19,11 @@ Feature: Compose messages
     And I enter "good" in "Body"
     And I click on the "Send Message" button
     Then I should see "Your message was successfully sent!"
+
+  Scenario: User doesnt enter in required subject field
+    Given I click on the "Inbox"
+    And I click on the "Compose" button
+    And I select "lisa" from the recipient lisa
+    And I enter "good" in "Body"
+    And I click on the "Send Message" button
+    Then I should see "We're sorry, but something went wrong"

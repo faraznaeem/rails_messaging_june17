@@ -7,16 +7,13 @@ end
 Given(/^I am logged in as "([^"]*)"$/) do |name|
   user = User.find_by(name: name)
   login_as(user, scope: :user)
-  visit '/'
+  visit root_path
 end
 
-Given(/^I click on the "([^"]*)"$/) do |arg1|
-  click_link(arg1)
+Given(/^I click on the "([^"]*)"(?:link|button)$/) do |link_or_button_name|
+  click_link_or_button link_or_button_name
 end
 
-Given(/^I click on the "([^"]*)" button$/) do |button_name|
-  click_link_or_button button_name
-end
 
 Given(/^I select "([^"]*)" from the recipient list$/) do |recipient|
   select recipient, from: "Recipient"
