@@ -27,6 +27,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'launchy'
 end
 
 group :production do
