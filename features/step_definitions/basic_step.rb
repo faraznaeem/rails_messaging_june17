@@ -49,6 +49,8 @@ def get_path(page_name)
     path = new_user_session_path
   when 'landing'
     path = root_path
+  when 'Conversation'
+    path = conversations_path
   else
     raise 'Path missing!'
   end
