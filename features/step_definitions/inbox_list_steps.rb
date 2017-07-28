@@ -1,21 +1,28 @@
 
-Given(/^the following users exist$/) do |table|
-  table.hashes.each do |user|
-    User.create(user)
-  end
+Given(/^I send a mail to "([^"]*)"$/) do |name|
+  @receiver = User.find_by(name: name)
+  @user.send_message(@receiver, 'Lorem ipsum...', 'Subject')
 end
 
-Given(/^I am logged in as "([^"]*)"$/) do |name|
+Given(/^I am on the "([^"]*)"$/) do |user|
   user = User.find_by(name: name)
-  #user = FactoryGirl.create(:user)
-  login_as(user, :scope => :name)
+  login_as(user, scope: :user)
   visit root_path
 end
 
-Given(/^I visit '\/inbox' page$/) do
-  visit '/'
+Then(/^I should have "([^"]*)" messages$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then(/^I should see a label with number of messages\.$/) do
-  find_link('/mailbox/inbox').visible?
+Then(/^I click on the "([^"]*)" link$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^the following users exist$/) do |table|
+  # table is a Cucumber::MultilineArgument::DataTable
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^I am logged in as "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
 end
