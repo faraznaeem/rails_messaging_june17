@@ -3,8 +3,10 @@ Coveralls.wear_merged!('rails')
 
 require 'cucumber/rails'
 require 'pry-rails'
+require 'capybara/poltergeist'
 
 ActionController::Base.allow_rescue = false
+Capybara.javascript_driver = :poltergeist
 
 begin
   DatabaseCleaner.strategy = :transaction
