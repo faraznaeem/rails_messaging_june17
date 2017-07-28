@@ -4,11 +4,8 @@ Feature: Compose messages
   I should be able to compose a message
 
   Background:
-    Given the following user exist
-      | name      | password          | email         |
-      | bob       | bob12345          | bob@bob.com   |
-      | lisa      | lisa12345         | lisa@lisa.com |
-
+    Given the user "bob" exist
+    And the user "lisa" exist
     And I am logged in as "bob"
 
   Scenario: User doesn't enter in required subject field

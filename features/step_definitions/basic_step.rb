@@ -34,15 +34,9 @@ Given(/^the user "([^"]*)" exist$/) do |name|
   FactoryGirl.create(:user, name: name)
 end
 
-Given(/^the following user exist$/) do |table|
-  table.hashes.each do | user |
-    User.create(user)
-  end
-end
-
 Given(/^I am logged in as "([^"]*)"$/) do |name|
-  user = User.find_by(name: name)
-  login_as(user, scope: :user)
+  @user = User.find_by(name: name)
+  login_as(@user, scope: :user)
 end
 
 #Step helpers
