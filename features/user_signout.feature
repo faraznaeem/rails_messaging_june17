@@ -5,7 +5,6 @@ Feature: As a user
   Background:
     Given the user "Bob" exist
     And I am logged in as "Bob"
-    And show me the page
 
   Scenario: User Log out
     When I visit "landing" page
