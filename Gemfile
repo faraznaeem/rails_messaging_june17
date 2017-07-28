@@ -14,6 +14,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
+
 group :development do
   gem 'pry-byebug'
   gem 'spring'
@@ -31,6 +32,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'launchy'
   gem 'pry-rails'
+  gem 'poltergeist'
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
 end
 
 group :production do
